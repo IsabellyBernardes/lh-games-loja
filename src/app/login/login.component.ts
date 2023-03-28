@@ -10,10 +10,13 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   usuario!: string;
   senha!: string;
-  constructor(private _loginService: LoginService, private _router:
-    Router) { }
+  constructor(
+    private _loginService: LoginService,
+    private _router: Router) { }
+
   ngOnInit(): void {
   }
+
   fazerLogin() {
     this._loginService.login(this.usuario, this.senha);
     this._router.navigate(['/restrito/lista']);

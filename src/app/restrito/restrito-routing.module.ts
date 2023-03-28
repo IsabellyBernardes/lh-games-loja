@@ -6,7 +6,7 @@ import { ListaProdutoComponent } from './lista-produto/lista-produto.component';
 import { MenuRestritoComponent } from './restrito.component';
 import { GuardGuard } from '../guard.guard';
 
-const routes: Routes = [
+const restritoRoutes: Routes = [
     {
         path: 'restrito', component: MenuRestritoComponent, children: [
             { path: 'cadastro', component: CadastroProdutoComponent, canActivate: [GuardGuard] },
@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(restritoRoutes)],
     exports: [RouterModule]
 })
 export class RestritoRoutingModule { }

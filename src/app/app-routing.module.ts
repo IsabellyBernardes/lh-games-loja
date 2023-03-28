@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuardGuard } from './guard.guard';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
-import { RestritoComponent } from './restrito/restrito.component';
+import { RestritoRoutingModule } from './restrito/restrito-routing.module';
 
 const routes: Routes = [
   {path:'inicio', component: InicioComponent},
   {path:'login', component: LoginComponent},
-  {path:'restrito', component: RestritoComponent, canActivate: [GuardGuard]},
+  {path:'restrito', loadChildren: () => RestritoRoutingModule, canActivate: [GuardGuard]},
   {path:'', redirectTo:'/inicio',pathMatch:'full'}
 ];
 
